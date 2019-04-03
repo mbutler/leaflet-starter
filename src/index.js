@@ -20,7 +20,7 @@ let markercolor = {
     fillOpacity: 0.5
 }
 
-let mainlayer = new L.geoJson(letters, {
+let mainlayer = new L.geoJson(data, {
     onEachFeature: onEachFeature,
     pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, markercolor)
@@ -34,7 +34,8 @@ markers.addTo(map)
 let sliderControl = L.control.sliderControl({
     position: "topright",
     layer: mainlayer,
-    range: true
+    range: true,
+    showAllOnStart: true
 })
 
 map.addControl(sliderControl)
