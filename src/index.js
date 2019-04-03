@@ -25,14 +25,18 @@ let mainlayer = new L.geoJson(letters, {
     pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, markercolor)
     }
-}).addTo(map)
+})
 
+let markers = L.markerClusterGroup()
+markers.addLayer(mainlayer)
+map.addLayer(markers)
 
 let sliderControl = L.control.sliderControl({
     position: "topright",
     layer: mainlayer,
     range: true
 })
+
 map.addControl(sliderControl)
 sliderControl.startSlider()
 
