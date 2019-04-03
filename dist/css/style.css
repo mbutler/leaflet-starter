@@ -3,3 +3,13 @@
 	height: 900px;
 	border: 1px solid #ccc;
 }
+
+
+.leaflet-popup {
+	width: 400px;
+}
+
+.leaflet-popup-content {
+	overflow-y: scroll;
+	max-height: 300px;
+}

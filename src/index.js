@@ -32,28 +32,11 @@ let mainlayer = new L.geoJson(letters, {
 //let marker = L.circleMarker(latlng, blueCircleMarkers).addTo(map)
 
 function onEachFeature(feature, layer) {
-
+    let letter = feature.properties.text
     let prop = feature.properties
-    let url
-    let letterBody
-
-    if (prop['URL'] !== "") {
-        url = prop['URL']
-        $.get(url, (res) => {
-            letterBody = $(res).find("body").html()
-            let popup = `<h3> ${prop['Sender']} to ${prop['Recipient']} on ${prop['time']} </h3><br> ${letterBody}`
-
-            feature.layer = layer
-            layer.bindPopup(popup, {
-                maxWidth: "auto"
-            })
-        })
-    } else {
-        url = "No digital transcription at this time"
-        let popup = `<h3> ${prop['Sender']} to ${prop['Recipient']} on ${prop['time']} </h3><br> ${url}`
-        feature.layer = layer
-        layer.bindPopup(popup, {
-            maxWidth: "auto"
-        })
-    }
+    let popup = `<h3> ${prop['Sender']} to ${prop['Recipient']} on ${prop['time']} </h3><br> ${letter}`
+    feature.layer = layer
+    layer.bindPopup(popup, {
+        maxWidth: "auto"
+    })   
 }
