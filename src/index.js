@@ -30,9 +30,7 @@ let mainlayer = new L.geoJson(letters, {
 
 let sliderControl = L.control.sliderControl({
     position: "topright",
-    layer: mainlayer, 
-    timeAttribute: "epoch",
-    isEpoch: true,
+    layer: mainlayer,
     range: true
 })
 map.addControl(sliderControl)
