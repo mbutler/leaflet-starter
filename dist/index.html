@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>if (window.module) module = window.module;</script>
-    <link rel="stylesheet" href="css/style.css" />
-
+<head>
     <title>Whitman Correspondence Map</title>
-  </head>
-  <body>
+    <meta charset="utf-8" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
     <div id="map"></div>
-    <script src="js/letters.js"></script>
-    <script src="js/bundle.js" charset="utf-8"></script>
 
-  </body>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <!-- Include this library for mobile touch support  -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/SliderControl.js"></script>
+
+    <script src="js/letters.js"></script>
+    <script src="js/bundle.js"></script>
+</body>
+
 </html>

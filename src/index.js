@@ -1,5 +1,3 @@
-import L from 'leaflet'
-
 const map = L.map('map', {
     center: [0, 0],
     zoom: 3,
@@ -7,11 +5,9 @@ const map = L.map('map', {
     maxZoom: 12
 })
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 12
-}).addTo(map)
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 let markercolor = {
     radius: 8,
@@ -29,7 +25,16 @@ let mainlayer = new L.geoJson(letters, {
     }
 }).addTo(map)
 
-//let marker = L.circleMarker(latlng, blueCircleMarkers).addTo(map)
+
+let sliderControl = L.control.sliderControl({
+    position: "topright",
+    layer: mainlayer, 
+    timeAttribute: "epoch",
+    isEpoch: true,
+    range: true
+})
+map.addControl(sliderControl)
+sliderControl.startSlider()
 
 function onEachFeature(feature, layer) {
     let letter = feature.properties.text
