@@ -27,9 +27,9 @@ let mainlayer = new L.geoJson(letters, {
     }
 })
 
-let markers = L.markerClusterGroup()
-markers.addLayer(mainlayer)
-map.addLayer(markers)
+let markers = L.markerClusterGroup.layerSupport()
+markers.checkIn(mainlayer)
+markers.addTo(map)
 
 let sliderControl = L.control.sliderControl({
     position: "topright",
